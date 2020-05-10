@@ -18,4 +18,17 @@ Access-Control-Allow-Methods | GET, POST, PUT, DELETE, OPTIONS
 Access-Control-Max-Age | 3600
 Access-Control-Allow-Headers | Origin,Accet,X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers,Authorization
 
+<br>
+
 ## SOP(same-origin policy), 동일 출처 정책
+어떤 출처에서 불러온 문서나 스크립트가 다른 출처에서 가져온 리소스와 상호작용하는 것을 제한하는 웹 보안 모델
+잠재적으로 해로울 수 있는 문서를 분리함으로써 가능한 공격 경로를 줄이는데 도움을 줌
+
+JavaScript는 스크립트를 포함하고 있는 문서와 같은 출처의 문서에 있는 window와 Document 객체의 속성만을 사용할 수 있다. 
+스크립트 파일의 출처는 동일 출처 정책과 전혀 관계가 없고 중요한 것은 스크립트를 포함하고 있는 문서의 출처다. 
+
+
+---
+### 참고
+[MDN web docs](https://developer.mozilla.org/ko/docs/Web/Security/Same-origin_policy)<br>
+[양은냄비님의 기술브로그](https://iamawebdeveloper.tistory.com/38)
