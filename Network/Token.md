@@ -1,7 +1,7 @@
 # Access Token & Refresh Token
 기존 JWT 방식의 진화버전
 
-## JWT (JSON Web Token)
+## __JWT (JSON Web Token)__
 두 개체에서 JSON 객체를 사용하여 정보를 안전성있게 전달하는 토큰<br>
 C, Java, Python 등 대부분의 프로그래밍 언어에서 사용할 수 있음<br>
 일반 토큰방식과 달리 DB 조회가 없는 것이 큰 장점
@@ -36,7 +36,7 @@ C, Java, Python 등 대부분의 프로그래밍 언어에서 사용할 수 있�
 객체가 encoding 되는 과정에서 공백 문자나 엔터는 삭제함
 
 ---
-## Refresh Token
+## __Refresh Token__
 Access Token만을 이용한 인증 방식은 단점이 존재 -> 보안성을 높이고자 유효기간을 짧게 한다면 로그인을 자주 해야 하므로 불편하고, 유효기간을 길게 하면 토큰을 탈취될 위험이 높아지므로 보안성 취약<br>
 
 Refresh Token을 이용하면 Access Token의 유효기간을 짧게 해도 번거롭게 로그인을 자주 하지 않아도 되므로 단점을 보완할 수 있다.<br>
@@ -59,5 +59,6 @@ Refresh Token을 이용하면 Access Token의 유효기간을 짧게 해도 번�
 
 ---
 ### 참고
-> [VELOPERT.LOG - JWT](https://velopert.com/2389)
-> [자유로운 오랑우탄](https://tansfil.tistory.com/59)
+> [VELOPERT.LOG - JWT](https://velopert.com/2389)<br>
+> [자유로운 오랑우탄](https://tansfil.tistory.com/59)<br>
+> [이미지 출처](https://images.app.goo.gl/HrmTYnGWcheVQpBKA)
