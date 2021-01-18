@@ -25,11 +25,41 @@ Webkit | 애플이 개발한 오픈소스 엔진, HTML과 Body 태그를 처리 
 Presto | 오페라 소프트웨어가 개발한 엔진, 렌더링 속도는 가장 빠르지만 호환성이 안좋음 | 오페라
 
 ## 동작 원리
-1. `파싱` HTML 마크업을 처리하고 DOM 트리를 빌드한다. _WHAT_
-2. CSS 마크업을 처리하고 CSSOM 트리를 빌드한다. _HOW_
-3. DOM 및 CSSOM 을 결합하여 렌더링 트리를 형성한다. _DISPLAY_
-4. 렌더링 트리에서 레이아웃을 실행하여 각 노드가 정확한 위치에 표시되도록 배치한다.
-5. 배치된 노드를 스타일 속성에 맞게 그린다.
+
+### 1. DOM 트리 생성 `WHAT`
+
+- HTML 마크업을 처리하고 DOM 트리를 빌드한다.
+- HTML은 부분별로 실행될 수 있다.
+- 페이지를 추가하기 위해서 전체 문서가 로드될 필요는 없다.
+
+### 2. CSSOM 트리 생성 `HOW`
+
+- 문서의 스타일과 관련된 CSS Object Model을 생성한다.
+- render blocking resource : 리소스가 전부 파싱되지 않으면 렌더트리를 생성할 수 없음
+- HTML과 다르게 CSS는 부분별로 사용될 수 없다.
+- JS 파일은 CSSOM이 생성될 때까지 대기해야 한다.
+
+### 3. 자바스크립트 실행
+
+- parser blocking resource : JS에 의해 HTML 도큐먼트 파싱이 block된다.
+- 파서가 `<srcipt>` 태그를 만나면 fetch하는 것을 중단하고 JS 파일을 기다린다.
+- `<srcipt>` 태그를 HTML 문서 하단에 위치시키는 이유
+- 비동기적으로 스크립트를 가져오려면 `async` attribute를 추가한다.
+
+### 4. 렌더 트리 생성 `DISPLAY`
+
+- DOM 및 CSSOM 을 결합한 것이 렌더 트리가 된다.
+- 이때 포함되는 것은 visible content가 된다. `display : none`이라면 포함되지 않는다.
+
+### 5. 레이아웃 생성
+
+- 렌더링 트리에서 레이아웃을 실행하여 각 노드가 정확한 위치에 표시되도록 배치한다.
+
+### 6. 페인팅
+
+- visible content가 스크린에서 픽셀단위로 display된다. 
+- 배치된 노드를 스타일 속성에 맞게 그린다.
 
 ### 참고
-> [Naver D2](https://d2.naver.com/helloworld/59361)
+- [Naver D2](https://d2.naver.com/helloworld/59361)
+- [Understanding the Critical Rendering Path](https://bitsofco.de/understanding-the-critical-rendering-path/)
