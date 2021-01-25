@@ -36,6 +36,7 @@
 ### 1.x vs 2.0
 
 - 멀티플렉싱 개념의 도입 => 동시에 여러 리소스를 받아올 수 있게 됨
+  - 먼저 처리된 요청은 먼저 받는다! 앞에서 보낸 요청 처리가 blocking 하지 않는다.
 - 데이터를 전송할 때 바이너리로 인코딩하여 전송 (1은 plain text)
 - 1버전에서는 메시지라는 단위로 구분되어 있었으나 2는 스트림의 구조로 변화
 - 기존의 헤더를 압축하여 성능 향상
@@ -64,3 +65,4 @@
 ### 참고자료
 - [복세편살 블로그 : HTTP 2의 탄생 배경과 특징](https://americanopeople.tistory.com/115)
 - [와탭 블로그 : HTTP/2 알아보기](https://www.whatap.io/ko/blog/38/)
+- [HTTP2 전체적인 동작방식](https://b.luavis.kr/http2/http2-overall-operation)
