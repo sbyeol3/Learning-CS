@@ -46,6 +46,21 @@ Presto | 오페라 소프트웨어가 개발한 엔진, 렌더링 속도는 가�
 - `<srcipt>` 태그를 HTML 문서 하단에 위치시키는 이유
 - 비동기적으로 스크립트를 가져오려면 `async` attribute를 추가한다.
 
+```
+script tag의 위치
+
+- head : script를 로드되고 웹을 보게 됨
+- body : page의 컨텐츠가 생겨나고 로드됨
+
+```
+
+```
+script tag의 attribute
+
+- async : 비동기적으로 스크립트를 가져옴
+- defer : 순서대로 실행하나 파싱이 종료된 후 가져옴
+```
+
 ### 4. 렌더 트리 생성 `DISPLAY`
 
 - DOM 및 CSSOM 을 결합한 것이 렌더 트리가 된다.
@@ -63,3 +78,4 @@ Presto | 오페라 소프트웨어가 개발한 엔진, 렌더링 속도는 가�
 ### 참고
 - [Naver D2](https://d2.naver.com/helloworld/59361)
 - [Understanding the Critical Rendering Path](https://bitsofco.de/understanding-the-critical-rendering-path/)
+- [Where to Put Your JavaScript in a Web Page](http://www.cev.washington.edu/lc/CLWEBCLB/jst/js_whereto.html)
